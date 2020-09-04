@@ -1,9 +1,18 @@
 import React from 'react';
 import './App.css';
-import { Filtro } from './components/filtro';
+import PokemonsList from './components/PokemonsList';
+import { useContext } from 'react';
+import { PokemonContext } from './PokemonContext';
+
+useContext(PokemonContext); // returns the context provider value we created
 
 const App = () => (
- <Filtro />
+  <PokemonProvider>
+    <div className="App">
+      <PokemonsList />
+      <Pokedex />
+    </div>
+  </PokemonProvider>
 );
 
 export default App;
