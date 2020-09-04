@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 
 export default function Filtro() {
-    const [PokemonFetch, setPokemonFetch] = useState([]); 
+    const [PokemonFetch, setPokemonFetch] = useState(""); 
     const [PokeItem, setPokeItem] = useState([]); 
 
   useEffect(() => {
-            fetch("https://pokeapi.co/api/v2/pokemon?limit=5")
+            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10`)
             .then(r => r.json())
             .then(allpokemon => {
              setPokemonFetch(allpokemon.results.forEach(function(pokemon){
@@ -16,17 +16,43 @@ export default function Filtro() {
             })
     }, [])
     console.log(PokemonFetch);
+
     function fetchPokemonData(pokemon){
-      let url = pokemon.url // <--- this is saving the pokemon url to a variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
+      let url = pokemon.url
         fetch(url)
         .then(response => response.json())
         .then(function(pokeData){
           setPokeItem(pokeData)
         })
       }
-      console.log(PokeItem);
 
-      
+      const mostrarNombres = PokeItem.map((poke, i) => {
+        return <div key={i}>
+            <div className="divTableCell">{poke.name}</div>
+            </div>
+      });
+      return (
+        <div className="pokemons-filter">
+ 
+            <h4>Hola mundo</h4>
+
+        <div id="poke-container">
+             {mostrarNombres}
+        </div>
+        </div>
+      )
+ }
+
+    //   useEffect(() => {
+//     const fetchPokemons = async () => {
+//       const response = await fetch(url);
+//       const data = await response.json();
+//       setPokemonFetch(data.results);
+//     };
+//     fetchPokemons();
+//   }, []);
+
+
  /*
       let mostrarNombres = PokeItem.map((pokemon, i) => {
         return <div key={i}>
@@ -113,25 +139,3 @@ export default function Filtro() {
     //       setPokemonItem(pokeData.results)
     //     })
     //   }, [])
-
-
-      return (
-        <div className="pokemons-filter">
- 
-            <h4>Hola mundo</h4>
-
-        <div id="poke-container">
-             {/* {mostrarNombres} */}
-        </div>
-        </div>
-      )
- }
-
-    //   useEffect(() => {
-//     const fetchPokemons = async () => {
-//       const response = await fetch(url);
-//       const data = await response.json();
-//       setPokemonFetch(data.results);
-//     };
-//     fetchPokemons();
-//   }, []);
