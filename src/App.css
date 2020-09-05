@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(236, 191, 145);
+  font-family: 'Comic Neue', cursive;
+  font-size: 25px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  font-size: 45px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.pokedex {
+ margin: auto;
+ text-align: center; 
 }
-
-.App-link {
-  color: #61dafb;
+.container-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin: 30px auto;
+  max-width: 1200px;
+  justify-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  background-color: rgb(222, 253, 224);
+  display: grid;
+  justify-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  text-transform: capitalize;
+}
+.card img {
+  margin-top: 20px;
+  max-width: 50%;
 }
