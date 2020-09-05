@@ -2,14 +2,30 @@ import React, { useState, useEffect } from "react";
 
 export default function ComponentsMain() {
   const [data, setData] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=25  ?{id}")
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=25")
       .then((r) => r.json())
       .then((allpokemon) => {
+        allpokemon.results.forEach(function(pokemon){
+          fetchData(pokemon); 
+        })
         setData(allpokemon.results);
       });
   }, []);
+  
+data.forEach(function(pokemon){
+  fetchData(pokemon); 
+})
+function fetchData(pokemon){
+  let url = pokemon.url
+    fetch(url)
+    .then(response => response.json())
+    .then(function(pokeData){
+    console.log(pokeData)
+    })
+  }
 
   // console.log(
   //   data.map((pokemon, index) => {
