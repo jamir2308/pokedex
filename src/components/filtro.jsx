@@ -10,21 +10,11 @@ export default function Filtro() {
             fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10`)
             .then(r => r.json())
             .then(allpokemon => {
-             setPokemonFetch(allpokemon.results.forEach(function(pokemon){
-             fetchPokemonData(pokemon); 
-            }))
+             setPokemonFetch(allpokemon.results)
             })
     }, [])
     console.log(PokemonFetch);
 
-    function fetchPokemonData(pokemon){
-      let url = pokemon.url
-        fetch(url)
-        .then(response => response.json())
-        .then(function(pokeData){
-          setPokeItem(pokeData)
-        })
-      }
 
       const mostrarNombres = PokeItem.map((poke, i) => {
         return <div key={i}>
