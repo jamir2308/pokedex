@@ -19,23 +19,26 @@ export default function ComponentsMain() {
 
   const FetchPokemonData = data.map((pokemon, index) => {
     return (
-      <div key={index}>
-        <div className="img-container">
-          <img
-            src={`https://pokeres.bastionbot.org/images/pokemon/${
-              index + 1
-            }.png`}
-            alt={pokemon.name}
-          />
-        </div>
-        <div className="info">
-          <span className="number">#{pokemon.name}</span>
-          <h3 className="name">{pokemon.name}</h3>
-          {/* <small className="type">Type: <span>${type}</span></small> */}
+      <div className="" key={index}>
+        <div className="">
+          <div className="">
+            <img
+              src={`https://pokeres.bastionbot.org/images/pokemon/${
+                index + 1
+              }.png`}
+              className=""
+              alt={pokemon.name}
+            />
+          </div>
+          <div className="info">
+            <span className="number">#{pokemon.name}</span>
+            <h3 className="name">{pokemon.name}</h3>
+            {/* <small className="type">Type: <span>${type}</span></small> */}
+          </div>
         </div>
       </div>
     );
   });
 
-  return <div>{FetchPokemonData}</div>;
+  return <div className="row">{FetchPokemonData}</div>;
 }

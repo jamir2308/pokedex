@@ -5,7 +5,7 @@ import ComponentsMain from "./components/ComponentsMain";
 
 function App() {
   return (
-    <div className="App">
+    <div className="row">
       <ComponentsMain />
     </div>
   );
