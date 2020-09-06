@@ -24,7 +24,6 @@ export default function ComponentsMain() {
   //   let data = await fetchData({url:e.target.href})
   //   console.log(data)
   // }
-  
   const FetchPokemonData = data.map((pokemon, index) => {
     return (
       <div key={index} className="card" >
