@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function ComponentsMain() {
   const [data, setData] = useState([]);
@@ -11,34 +12,38 @@ export default function ComponentsMain() {
       });
   }, []);
 
-  // console.log(
-  //   data.map((pokemon, index) => {
-  //     return pokemon.name + "  " + index;
-  //   })
-  // );
+  // let fetchData = async(pokemon) => {
+  //   let url = pokemon.url
+  //     let response = await fetch(url)
+  //     let pokeData = await response.json()
+  //     return pokeData
+  //   }
+  // const verDetallePokemon = async(e) => {
+  //   e.preventDefault()
+  //   let data = await fetchData({url:e.target.href})
+  //   console.log(data)
+  // }
 
   const FetchPokemonData = data.map((pokemon, index) => {
     return (
-      <div className="" key={index}>
-        <div className="">
-          <div className="">
-            <img
-              src={`https://pokeres.bastionbot.org/images/pokemon/${
-                index + 1
-              }.png`}
-              className=""
-              alt={pokemon.name}
-            />
-          </div>
-          <div className="info">
-            <span className="number">#{pokemon.name}</span>
-            <h3 className="name">{pokemon.name}</h3>
-            {/* <small className="type">Type: <span>${type}</span></small> */}
-          </div>
-        </div>
+      <div key={index} className="card">
+        <Link to={/pokemon/ + (index + 1)}>
+          <img
+            src={`https://pokeres.bastionbot.org/images/pokemon/${
+              index + 1
+            }.png`}
+            alt={pokemon.name}
+          />
+          <h3 className="name">{pokemon.name}</h3>
+        </Link>
       </div>
     );
   });
 
-  return <div className="row">{FetchPokemonData}</div>;
+  return (
+    <section className="pokedex">
+      <h1>Bienvenido al Pokedex</h1>
+      <div className="container-card">{FetchPokemonData}</div>
+    </section>
+  );
 }
