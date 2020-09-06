@@ -4,7 +4,20 @@ body {
   background-color: rgb(236, 191, 145);
   font-family: 'Comic Neue', cursive;
   font-size: 25px;
+  padding: 0 15px;
 }
+a {
+  text-decoration: none;
+  color: #323547;
+}
+.container-detail a {
+  text-align: right;
+  margin: 28px 0;
+}
+
+.container-detail {
+  display: grid;
+ }
 h1{
   font-size: 45px;
 }
@@ -12,12 +25,12 @@ h1{
  margin: auto;
  text-align: center; 
 }
+
 .container-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   margin: 30px auto;
-  max-width: 1200px;
   justify-items: center;
 }
 .card {
@@ -28,7 +41,61 @@ h1{
   padding: 10px;
   text-transform: capitalize;
 }
+
+.card:hover {
+  background-color: rgb(59, 206, 69);
+
+}
 .card img {
   margin-top: 20px;
   max-width: 50%;
+}
+
+@media only screen and (min-width: 768px) { 
+  .container-detail {
+    display: grid;
+    max-width: 700px;
+    margin: auto;
+}
+  .container-card {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .detail {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .detail section{
+    flex: 1;
+  }
+  .detail section img{
+    width: 100%;
+  }
+  
+}
+
+.slide-enter,
+.slide-exit {
+  transition: transform 1000ms ease-out;
+}
+
+.slide-enter {
+  transform: translateX(100%);
+  
+}
+
+.slide-enter.slide-enter-active {
+  transform: translateX(0%);
+  
+}
+
+.slide-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(0%);
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
 }

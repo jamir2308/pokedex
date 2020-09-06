@@ -5,6 +5,8 @@ export default function Pokemon() {
 const [poke, setPoke] = useState([]);
 const [pokemonType, setPokemonType] = useState("");
 const [pokemonAbilities, setPokemonAbilities] = useState("");
+const [pokemonSpecies, setPokemonSpecies] = useState("");
+const [pokemonSprites, setPokemonSprites] = useState("");
 const {id} = useParams()
 console.log (id)
 
@@ -18,21 +20,41 @@ console.log (id)
     setPoke(pokeData)
     setPokemonType(pokeData.types[0].type.name);
     setPokemonAbilities(pokeData.abilities[0].ability.name);
+    setPokemonSprites(pokeData.sprites.back_default);
     console.log(pokeData)
   }
+
+  useEffect(() => {
+    getSpecies() 
+}, [])
+
+const getSpecies = async() => {
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id.text}`)
+    let especies = await response.json()
+    // setPokemonSpecies(species.name)
+    console.log(especies)
+  }
     return (
-        <div>
-        <Link to ="/">
-        Volver
-        </Link>
-           <h3>Nombre: {poke.name} </h3>    
+     <div className="container-detail" >
+      <Link to ="/">
+       Volver
+      </Link>
+      <h3>{poke.name}</h3>   
+     <div className="card detail" >
+            
+        <section>
+           <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt={poke.name} />
+        <img src={pokemonSprites}/>
+         </section>
+        <section> 
            <h3>Tipo: {pokemonType}</h3>
            <h3>Altura: {poke.height} cm</h3>
            <h3>Peso: {poke.weight} lbs</h3>
            <h3>Habilidad principal: {pokemonAbilities}</h3>
-           <img
-            src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt={poke.name}
-          />  
-        </div>
+           <h3>Especies: {pokemonSpecies}</h3>
+           
+        </section>
+    </div>
+    </div>
     )
 }
