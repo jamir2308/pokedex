@@ -41,12 +41,15 @@ h1{
   padding: 10px;
   text-transform: capitalize;
 }
+
+.card:hover {
+  background-color: rgb(59, 206, 69);
+
+}
 .card img {
   margin-top: 20px;
   max-width: 50%;
 }
-
-
 
 @media only screen and (min-width: 768px) { 
   .container-detail {
