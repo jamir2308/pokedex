@@ -1,18 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 body {
-  background-color: rgb(236, 191, 145);
-  font-family: 'Comic Neue', cursive;
+  background-color: #ecbf91;
+  font-family: 'Fredoka One', cursive;
   font-size: 25px;
   padding: 0 15px;
+  color: rgb(122, 88, 88);
 }
-a {
+a { 
   text-decoration: none;
-  color: #323547;
+  color: rgb(122, 88, 88);
+}
+
+a:hover{ 
+  text-decoration: none;
+  color: rgb(238, 216, 216);
+}
+
+h3 {
+  text-transform: capitalize;
 }
 .container-detail a {
-  text-align: right;
-  margin: 28px 0;
+text-align: right;
+    margin: 28px;
+    position: absolute;
+    right: 3px;
+
+}
+.container-detail:hover {
+  color: rgb(90, 39, 39);
 }
 
 .container-detail {
