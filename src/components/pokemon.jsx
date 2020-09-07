@@ -48,10 +48,10 @@ const getSpecies = async() => {
          </section>
         <section> 
            <h3>Tipo: {pokemonType}</h3>
-           <h3>Altura: {poke.height} cm</h3>
+           <h3>Altura: {poke.height} pulgadas</h3>
            <h3>Peso: {poke.weight} lbs</h3>
            <h3>Habilidad principal: {pokemonAbilities}</h3>
-           <h3>Especies: {pokemonSpecies}</h3>
+           {/* <h3>Especies: {pokemonSpecies}</h3> */}
            
         </section>
     </div>
