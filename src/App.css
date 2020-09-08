@@ -3,7 +3,7 @@ body {
   background-color: #ecbf91;
   font-family: "Fredoka One", cursive;
   font-size: 25px;
-  padding: 0 15px;
+  padding: 0 5px;
   color: rgb(122, 88, 88);
 }
 a {
@@ -18,7 +18,8 @@ a:hover {
 
 h3 {
   text-transform: capitalize;
-  margin: 15px;
+  margin: 5px;
+  font-size: 18px;
 }
 .container-detail a {
   text-align: right;
@@ -52,11 +53,14 @@ h1 {
 .card {
   background-color: rgb(222, 253, 224);
   display: grid;
+  width: 160px;
   justify-items: center;
   border-radius: 15px;
   text-transform: capitalize;
 }
-
+.card.detail {
+  width: 100%;
+}
 .card:hover {
   background-color: #3bce45;
 }
@@ -81,6 +85,12 @@ input {
 }
 
 @media only screen and (min-width: 768px) {
+
+  h3 {
+    margin: 15px;
+    font-size: 25px;
+  }
+
   .container-detail {
     display: grid;
     max-width: 700px;
@@ -88,6 +98,9 @@ input {
   }
   .container-card {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .card {
+    width:auto;
   }
   .detail {
     display: flex;
