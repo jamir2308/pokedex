@@ -13,7 +13,7 @@ export default function Pokemon() {
   useEffect(() => {
     getData();
   }, []);
-  for (var index = 0; index < 3; index++) {}
+
   const getData = async () => {
     let response = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${id}?limit=25`
@@ -28,14 +28,14 @@ export default function Pokemon() {
 
   console.log(pokemonType);
 
-  const getSpecies = async () => {
-    let response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon-species/${id.text}`
-    );
-    let especies = await response.json();
-    // setPokemonSpecies(species.name)
-    console.log(especies);
-  };
+  // const getSpecies = async () => {
+  //   let response = await fetch(
+  //     `https://pokeapi.co/api/v2/pokemon-species/${id.text}`
+  //   );
+  //   let especies = await response.json();
+  //   // setPokemonSpecies(species.name)
+  //   console.log(especies);
+  // };
   return (
     <div className="container-detail">
       <Link to="/">Volver</Link>

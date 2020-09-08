@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import ComponentsMain from "./components/ComponentsMain";
+import Pokedex from "./components/Pokedex";
 import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import Pokemon from "./components/pokemon";
+import Pokemon from "./components/Pokemon";
+import { PanelFooter } from "./components/PanelFooter";
 
-let Compo = () => <ComponentsMain />;
+let Compo = () => <Pokedex />;
 let Poke = () => <Pokemon />;
 
 const AnimatedSwitch = withRouter(({ location }) => (
@@ -24,6 +25,7 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <AnimatedSwitch />
+        <PanelFooter />
       </BrowserRouter>
     </div>
   );
