@@ -1,25 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 export const PanelFooter = () => {
-  const social_panel_container = document.querySelector(
-    ".social-panel-container"
-  );
+  const [visible, setVisible] = useState("");
 
-  const floatingBtn = () => {
-    social_panel_container.classList.remove("visible");
+  const floatingBtn = (e) => {
+    if (visible === "") {
+      setVisible("visible");
+    } else {
+      setVisible("");
+    }
   };
 
   const closeBtn = () => {
-    social_panel_container.classList.remove("visible");
+    setVisible("");
   };
+
   return (
     <div>
-      <div className="social-panel-container">
+      <div className={`social-panel-container ${visible}`}>
         <div className="social-panel">
           <p>
-            Creado Por: ==)<i className="fa fa-heart"></i>by Jamir - Santiago{" "}
+            Creado Por: <i className="fa fa-heart"></i> Jamir - Santiago{" "}
           </p>
           <button onClick={closeBtn} className="close-btn">
             <i className="fas fa-times"></i>

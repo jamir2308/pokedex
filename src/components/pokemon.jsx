@@ -12,7 +12,7 @@ export default function Pokemon() {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   const getData = async () => {
     let response = await fetch(
@@ -39,7 +39,7 @@ export default function Pokemon() {
   return (
     <div className="container-detail">
       <Link to="/">Volver</Link>
-      <h3 >{poke.name}</h3>
+      <h3>{poke.name}</h3>
       <div className="card detail">
         <section>
           <img
@@ -49,10 +49,18 @@ export default function Pokemon() {
           <img src={pokemonSprites} alt={poke.name} />
         </section>
         <section>
-          <h3>Tipo: <i>{pokemonType}</i></h3>
-          <h3>Altura: <i>{poke.height}</i> pulgadas</h3>
-          <h3>Peso: <i>{poke.weight}</i> lbs</h3>
-          <h3>Habilidad principal: <i>{pokemonAbilities}</i></h3>
+          <h3>
+            Tipo: <i>{pokemonType}</i>
+          </h3>
+          <h3>
+            Altura: <i>{poke.height}</i> pulgadas
+          </h3>
+          <h3>
+            Peso: <i>{poke.weight}</i> lbs
+          </h3>
+          <h3>
+            Habilidad principal: <i>{pokemonAbilities}</i>
+          </h3>
           {/* <h3>Especies: {pokemonSpecies}</h3> */}
         </section>
       </div>
