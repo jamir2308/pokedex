@@ -21,35 +21,34 @@ export const PanelFooter = () => {
     <div>
       <div className={`social-panel-container ${visible}`}>
         <div className="social-panel">
-          <p>
-            Creado Por: <i className="fa fa-heart"></i> Jamir - Santiago{" "}
-          </p>
-          <button onClick={closeBtn} className="close-btn">
-            <i className="fas fa-times"></i>
-          </button>
-          <h4>Contactanos</h4>
+          <p>Created by:</p>
+          <button onClick={closeBtn} className="close-btn"></button>
+          <h4>Jamir & santiago</h4>
+
           <ul>
             <li>
               <a
-                href="https://twitter.com/florinpop1705"
+                href="www.linkedin.com/in/jamir-patiño-carrascal-"
                 without
                 rel="noopener noreferrer"
               >
                 <LinkedInIcon />
               </a>
             </li>
+
             <li>
               <a
-                href="https://linkedin.com/in/florinpop17"
+                href="https://github.com/jamir2308"
                 without
                 rel="noopener noreferrer"
               >
                 <GitHubIcon />
               </a>
             </li>
+
             <li>
               <a
-                href="https://facebook.com/florinpop17"
+                href="https://www.linkedin.com/in/gozantia/"
                 without
                 rel="noopener noreferrer"
               >
@@ -58,7 +57,7 @@ export const PanelFooter = () => {
             </li>
             <li>
               <a
-                href="https://instagram.com/florinpop17"
+                href="https://github.com/Gozantia"
                 without
                 rel="noopener noreferrer"
               >

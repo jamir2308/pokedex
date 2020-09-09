@@ -75,7 +75,6 @@ h1 {
 }
 
 input {
-  
   border: none;
   color: #fff !important;
   font-family: "Fredoka One", cursive !important;
@@ -85,7 +84,6 @@ input {
 }
 
 @media only screen and (min-width: 768px) {
-
   h3 {
     margin: 15px;
     font-size: 25px;
@@ -100,7 +98,7 @@ input {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
   .card {
-    width:auto;
+    width: auto;
   }
   .detail {
     display: flex;
@@ -158,8 +156,8 @@ input {
 .social-panel {
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
-  border: 5px solid #001f61;
+  box-shadow: 0 16px 31px -17px #2c0b0b;
+  border: 5px solid rgb(250, 237, 55);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -173,7 +171,7 @@ input {
 
 .social-panel button.close-btn {
   border: 0;
-  color: #97a5ce;
+  color: #f0b2b2;
   cursor: pointer;
   font-size: 20px;
   position: absolute;
@@ -186,10 +184,12 @@ input {
 }
 
 .social-panel p {
-  background-color: #001f61;
+  background-color: #aac9db;
   border-radius: 0 0 10px 10px;
-  color: #fff;
-  font-size: 14px;
+  color: rgb(109, 102, 13);
+  font-size: 15px;
+
+  font-family: "Fredoka One", cursive;
   line-height: 18px;
   padding: 2px 17px 6px;
   position: absolute;
@@ -206,13 +206,13 @@ input {
 }
 
 .social-panel p a {
-  color: #ff7500;
+  color: #050c14;
   text-decoration: none;
 }
 
 .social-panel h4 {
   margin: 20px 0;
-  color: #97a5ce;
+  color: teal;
   font-family: "Muli";
   font-size: 14px;
   line-height: 18px;
@@ -231,9 +231,9 @@ input {
 }
 
 .social-panel ul li a {
-  border: 1px solid #dce1f2;
+  border: 1px solid #bff0f7;
   border-radius: 50%;
-  color: #001f61;
+  color: teal;
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -244,15 +244,15 @@ input {
 }
 
 .social-panel ul li a:hover {
-  border-color: #ff6a00;
-  box-shadow: 0 9px 12px -9px #ff6a00;
+  border-color: #4b78da;
+  box-shadow: 0 9px 12px -9px #65b187;
 }
 
 .floating-btn {
   border-radius: 26.5px;
-  background-color: #001f61;
-  border: 1px solid #001f61;
-  box-shadow: 0 16px 22px -17px #03153b;
+  background-color: #7e89ec;
+  border: 1px solid #7e89ec;
+  box-shadow: 0 16px 22px -17px #7e89ec;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
@@ -274,7 +274,7 @@ input {
 }
 
 .floating-text {
-  background-color: #001f61;
+  background-color: #7e89ec;
   border-radius: 10px 10px 0 0;
   color: #fff;
   font-family: "Muli";
@@ -286,7 +286,7 @@ input {
 }
 
 .floating-text a {
-  color: #ff7500;
+  color: #2f93c2;
   text-decoration: none;
 }
 
