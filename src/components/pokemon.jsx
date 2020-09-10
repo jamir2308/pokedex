@@ -7,35 +7,45 @@ export default function Pokemon() {
   const [pokemonType, setPokemonType] = useState([]);
   const [pokemonAbilities, setPokemonAbilities] = useState("");
   const [pokemonSprites, setPokemonSprites] = useState("");
+  const [pokemonAnterior, setPokemonAnterior] = useState("");
+  const [pokemoSucesor, setPokemonSucesor ] = useState("");
   const { id } = useParams();
   //console.log(id);
 
   useEffect(() => {
-    getData();
-  }, []);
+    async function getData() {
+      let response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${id}`
+      );
+      let pokeData = await response.json();
+      setPoke(pokeData);
+      setPokemonType(pokeData.types[0].type.name);
+      setPokemonAbilities(pokeData.abilities[0].ability.name);
+      setPokemonSprites(pokeData.sprites.back_default);
+    }
 
-  const getData = async () => {
-    let response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${id}?limit=25`
-    );
-    let pokeData = await response.json();
-    setPoke(pokeData);
-    setPokemonType(pokeData.types[0].type.name);
-    setPokemonAbilities(pokeData.abilities[0].ability.name);
-    setPokemonSprites(pokeData.sprites.back_default);
-    console.log(pokeData);
-  };
+    getData()
+}, [id])
 
-  console.log(pokemonType);
 
-  // const getSpecies = async () => {
-  //   let response = await fetch(
-  //     `https://pokeapi.co/api/v2/pokemon-species/${id.text}`
-  //   );
-  //   let especies = await response.json();
-  //   // setPokemonSpecies(species.name)
-  //   console.log(especies);
-  // };
+useEffect(() => {
+  async function getEvo() {
+    let r = await fetch(
+      `https://pokeapi.co/api/v2/pokemon-species/${id}`
+    );  
+    let specieData = await r.json();
+    let evoChain =  await fetch(specieData.evolution_chain.url)
+    let evoData = await evoChain.json();
+    let anteriorDe = evoData.chain.evolves_to[0].evolves_to[0].species;
+    // let sucesorDe  = specieData.evolves_from_species;
+    setPokemonAnterior(anteriorDe.name);
+    // if (sucesorDe.name !== '') setPokemonSucesor('');
+    
+  }
+  getEvo()
+
+}, [id])
+// console.log(pokemonEvo)
   return (
     <div className="container-detail">
       <Link to="/">Volver</Link>
@@ -53,9 +63,11 @@ export default function Pokemon() {
           <h3>Altura: <i>{poke.height}</i> pulgadas</h3>
           <h3>Peso: <i>{poke.weight}</i> lbs</h3>
           <h3>Habilidad principal: <i>{pokemonAbilities}</i></h3>
-          {/* <h3>Especies: {pokemonSpecies}</h3> */}
+          <h3>Evolución máxima: <i>{pokemonAnterior}</i></h3>
         </section>
       </div>
     </div>
+    
   );
-}
+
+  }

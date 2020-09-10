@@ -4,7 +4,6 @@ import Pokedex from "./components/Pokedex";
 import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Pokemon from "./components/Pokemon";
-import { PanelFooter } from "./components/PanelFooter";
 
 let Compo = () => <Pokedex />;
 let Poke = () => <Pokemon />;
@@ -24,7 +23,6 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <AnimatedSwitch />
-        <PanelFooter />
       </BrowserRouter>
     </div>
   );
