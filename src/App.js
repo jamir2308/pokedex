@@ -4,6 +4,7 @@ import Pokedex from "./components/Pokedex";
 import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Pokemon from "./components/Pokemon";
+import Footer from "./components/Footer"
 
 
 let Compo = () => <Pokedex />;
@@ -25,6 +26,7 @@ export default function App() {
       <BrowserRouter>
         <AnimatedSwitch />
       </BrowserRouter>
+    <Footer/>
     </div>
   );
 }

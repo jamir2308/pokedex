@@ -87,6 +87,10 @@ input {
   margin: 0 20px;
 }
 
+p.footer{
+  text-align: center;
+  padding-top: 30px;
+}
 @media only screen and (min-width: 768px) {
   h3 {
     margin: 15px;
@@ -102,13 +106,6 @@ input {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
  
   }
-<<<<<<< HEAD
-
-=======
-  .card {
-    width: auto;
-  }
->>>>>>> 13f89b8c7b03702615d3ee08218beb3b522aef5a
   .detail {
     display: flex;
     flex-direction: row-reverse;
