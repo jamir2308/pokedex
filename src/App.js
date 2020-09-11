@@ -12,7 +12,7 @@ const AnimatedSwitch = withRouter(({ location }) => (
   <TransitionGroup>
     <CSSTransition key={location.key} classNames="slide" timeout={1000}>
       <Switch location={location}>
-        <Route path="/pokemon/:id" component={Poke} exact />
+        <Route path="/Pokemon/:id" component={Poke} exact />
         <Route path="/" component={Compo} exact />
       </Switch>
     </CSSTransition>

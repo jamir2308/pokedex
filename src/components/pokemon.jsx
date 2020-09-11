@@ -50,7 +50,7 @@ useEffect(() => {
   return (
     <div className="container-detail">
       <Link to="/">Volver</Link>
-      <h3 >{poke.name}</h3>
+      <h3>{poke.name}</h3>
       <div className="card detail">
         <section>
           <img
