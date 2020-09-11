@@ -7,8 +7,9 @@ export default function Pokemon() {
   const [pokemonType, setPokemonType] = useState([]);
   const [pokemonAbilities, setPokemonAbilities] = useState("");
   const [pokemonSprites, setPokemonSprites] = useState("");
-  const [pokemonAnterior, setPokemonAnterior] = useState("");
-  const [pokemoSucesor, setPokemonSucesor ] = useState("");
+  const [pokemon1, setPokemon1] = useState("");
+  const [pokemon2, setPokemon2] = useState("");
+  const [pokemon3, setPokemon3] = useState("");
   const { id } = useParams();
   //console.log(id);
 
@@ -19,8 +20,8 @@ export default function Pokemon() {
       );
       let pokeData = await response.json();
       setPoke(pokeData);
-      setPokemonType(pokeData.types[0].type.name);
-      setPokemonAbilities(pokeData.abilities[0].ability.name);
+      setPokemonType(pokeData.types.map((t) => t.type.name).join(', '));
+      setPokemonAbilities(pokeData.abilities.map((h) => h.ability.name).join(', '));
       setPokemonSprites(pokeData.sprites.back_default);
     }
 
@@ -31,20 +32,20 @@ export default function Pokemon() {
 useEffect(() => {
   async function getEvo() {
     let r = await fetch(
-      `https://pokeapi.co/api/v2/pokemon-species/${id}`
-    );  
+      `https://pokeapi.co/api/v2/pokemon-species/${id}`);  
     let specieData = await r.json();
     let evoChain =  await fetch(specieData.evolution_chain.url)
     let evoData = await evoChain.json();
-    let anteriorDe = evoData.chain.evolves_to[0].evolves_to[0].species;
-    // let sucesorDe  = specieData.evolves_from_species;
-    setPokemonAnterior(anteriorDe.name);
-    // if (sucesorDe.name !== '') setPokemonSucesor('');
-    
+    setPokemon1(evoData.chain.species.name);
+    setPokemon2(evoData.chain.evolves_to[0].species.name); 
+    let trompas= evoData.chain.evolves_to[0].evolves_to[0]===undefined?"no tiene":evoData.chain.evolves_to[0].evolves_to[0].species.name;
+    setPokemon3(trompas);
   }
   getEvo()
 
 }, [id])
+
+
 // console.log(pokemonEvo)
   return (
     <div className="container-detail">
@@ -62,8 +63,10 @@ useEffect(() => {
           <h3>Tipo: <i>{pokemonType}</i></h3>
           <h3>Altura: <i>{poke.height}</i> pulgadas</h3>
           <h3>Peso: <i>{poke.weight}</i> lbs</h3>
-          <h3>Habilidad principal: <i>{pokemonAbilities}</i></h3>
-          <h3>Evolución máxima: <i>{pokemonAnterior}</i></h3>
+          <h3>Habilidades: <i>{pokemonAbilities}</i></h3>
+          <h3>Evolución 1: <i> {pokemon1}  </i></h3>
+          <h3>Evolución 2: <i> {pokemon2} </i></h3>
+          <h3>Evolución 3: <i> {pokemon3}</i></h3> 
         </section>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Pokemon from "./components/Pokemon";
 
+
 let Compo = () => <Pokedex />;
 let Poke = () => <Pokemon />;
 const AnimatedSwitch = withRouter(({ location }) => (

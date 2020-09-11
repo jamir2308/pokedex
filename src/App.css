@@ -10,7 +10,10 @@ a {
   text-decoration: none;
   color: rgb(122, 88, 88);
 }
-
+i {
+  text-decoration: none;
+  color: #123a6e;
+}
 a:hover {
   text-decoration: none;
   color: rgb(238, 216, 216);
@@ -19,7 +22,7 @@ a:hover {
 h3 {
   text-transform: capitalize;
   margin: 5px;
-  font-size: 18px;
+  font-size: 15px;
 }
 .container-detail a {
   text-align: right;
@@ -51,18 +54,19 @@ h1 {
   justify-items: center;
 }
 .card {
-  background-color: rgb(222, 253, 224);
+  background-color: #defde0;
   display: grid;
   width: 160px;
   justify-items: center;
   border-radius: 15px;
   text-transform: capitalize;
+  box-shadow: 0 19px 38px #0000004d, 0 15px 12px #00000038;
 }
 .card.detail {
   width: 100%;
 }
 .card:hover {
-  background-color: #3bce45;
+  background-color: rgb(136, 180, 139);
 }
 .card img {
   margin-top: 20px;
@@ -88,7 +92,7 @@ input {
 
   h3 {
     margin: 15px;
-    font-size: 25px;
+    font-size: 15px;
   }
 
   .container-detail {
@@ -98,13 +102,13 @@ input {
   }
   .container-card {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+ 
   }
-  .card {
-    width:auto;
-  }
+
   .detail {
     display: flex;
     flex-direction: row-reverse;
+    padding: 30px;
   }
   .detail section {
     flex: 1;
