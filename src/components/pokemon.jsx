@@ -49,9 +49,10 @@ useEffect(() => {
 // console.log(pokemonEvo)
   return (
     <div className="container-detail">
-      <Link to="/">Volver</Link>
-      <h3>{poke.name}</h3>
-      <div className="card detail">
+      <Link to="/" className="volver">Volver</Link>
+      
+      <div className="card detail" >
+      <h3 id="title">{poke.name}</h3>
         <section>
           <img
             src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
@@ -68,9 +69,9 @@ useEffect(() => {
           <h3>Evolución 2: <i> {pokemon2} </i></h3>
           <h3>Evolución 3: <i> {pokemon3}</i></h3> 
         </section>
-      </div>
+      
     </div>
-    
+    </div>  
   );
 
   }

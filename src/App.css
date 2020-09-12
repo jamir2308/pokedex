@@ -19,16 +19,19 @@ a:hover {
   color: rgb(238, 216, 216);
 }
 
-h3 {
-  text-transform: capitalize;
-  margin: 5px;
-  font-size: 15px;
+h3#title {
+  background: rgb(73, 70, 70);
+  color: rgb(238, 216, 216);
+  letter-spacing: 21px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 0 0 60px 60px;
+  padding: 10px 18px;
+  margin: 0;
 }
-.container-detail a {
-  text-align: right;
-  margin: 28px;
-  position: absolute;
-  right: 3px;
+a.volver {
+  text-align: center;
+  margin-bottom: 15px;
 }
 .container-detail:hover {
   color: rgb(90, 39, 39);
@@ -36,6 +39,8 @@ h3 {
 
 .container-detail {
   display: grid;
+  max-width: 350px;
+  margin: 25px auto;
 }
 h1 {
   font-size: 45px;
@@ -63,7 +68,7 @@ h1 {
   box-shadow: 0 19px 38px #0000004d, 0 15px 12px #00000038;
 }
 .card.detail {
-  width: 100%;
+  min-width: 350px;
 }
 .card:hover {
   background-color: rgb(136, 180, 139);
@@ -88,7 +93,9 @@ input {
 }
 p.footer{
   text-align: center;
-  padding-top: 30px;
+  padding-top: 25px;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 @media only screen and (min-width: 768px) {
   h3 {
@@ -96,19 +103,13 @@ p.footer{
     font-size: 15px;
   }
 
-  .container-detail {
-    display: grid;
-    max-width: 700px;
-    margin: auto;
-  }
   .container-card {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
  
   }
   .detail {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 30px;
+    display: grid;
+    padding: 0 10px;
   }
   .detail section {
     flex: 1;
