@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  CircularProgress,
-  Toolbar,
-  AppBar,
-} from "@material-ui/core";
+import { CircularProgress, Toolbar, AppBar } from "@material-ui/core";
 
 import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
@@ -42,11 +38,11 @@ const Pokedex = (props) => {
     const { id, name, sprite } = pokemonData[pokemonId];
 
     return (
-            <Link to={/pokemon/ + id} className="card" key={pokemonId}>
-              <img src={sprite} alt={name} />
-              <h3 className="name">{name}</h3>
-              <h3 className="name">{`# ${id}`}</h3>
-            </Link>
+      <Link to={/pokemon/ + id} className="card" key={pokemonId}>
+        <img src={sprite} alt={name} />
+        <h3 className="name">{name}</h3>
+        <h3 className="name">{`# ${id}`}</h3>
+      </Link>
     );
   };
 
@@ -56,7 +52,7 @@ const Pokedex = (props) => {
       <AppBar position="static">
         <Toolbar>
           <div>
-          <SearchIcon />
+            <SearchIcon />
             <input
               onChange={handleSearchChange}
               placeholder="Busca un pokemon"
@@ -65,8 +61,7 @@ const Pokedex = (props) => {
         </Toolbar>
       </AppBar>
       {pokemonData ? (
-      
-        <div className="container-card"> 
+        <div className="container-card">
           {Object.keys(pokemonData).map(
             (pokemonId) =>
               pokemonData[pokemonId].name.includes(filter) &&
