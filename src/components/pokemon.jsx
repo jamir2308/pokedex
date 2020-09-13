@@ -23,19 +23,8 @@ export default function Pokemon() {
     setPokemonType(pokeData.types[0].type.name);
     setPokemonAbilities(pokeData.abilities[0].ability.name);
     setPokemonSprites(pokeData.sprites.back_default);
-    console.log(pokeData);
   };
 
-  console.log(pokemonType);
-
-  // const getSpecies = async () => {
-  //   let response = await fetch(
-  //     `https://pokeapi.co/api/v2/pokemon-species/${id.text}`
-  //   );
-  //   let especies = await response.json();
-  //   // setPokemonSpecies(species.name)
-  //   console.log(especies);
-  // };
   return (
     <div className="container-detail">
       <Link to="/">Volver</Link>

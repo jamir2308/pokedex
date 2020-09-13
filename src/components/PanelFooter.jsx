@@ -21,7 +21,7 @@ export const PanelFooter = () => {
     <div>
       <div className={`social-panel-container ${visible}`}>
         <div className="social-panel">
-          <p>Created by:</p>
+          <p>Creado por:</p>
           <button onClick={closeBtn} className="close-btn"></button>
           <h4>Jamir & santiago</h4>
 
@@ -68,7 +68,7 @@ export const PanelFooter = () => {
         </div>
       </div>
       <button onClick={floatingBtn} className="floating-btn">
-        Get in Touch
+        Contactanos
       </button>
     </div>
   );
